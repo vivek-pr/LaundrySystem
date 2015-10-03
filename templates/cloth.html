@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+
+<h1>please add your clothes {{request.session.name}}</h1>
+{{cloth}}
+<form method="post" action="cloth">
+  {% csrf_token %}
+  {{ form|crispy }}
+<input class='btn btn-block btn-primary' type="submit"  />
+</form>
+</div>
+</div>
+
+
+
+
+{% endblock %}

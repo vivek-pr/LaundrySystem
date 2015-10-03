@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block title%}home{% endblock %}
+{% block content%}
+          <div class="inner cover">
+            <h1 class="cover-heading">Put Your Cloths.</h1>
+            <p class="lead">Laundry is a place where you enjoy your life without worrying about your cloths. we care about them.</p>
+             {% if not request.session.name %}
+            <p class="lead">
+              <a href="/register" class="btn btn-lg btn-default">Register</a>
+            </p>
+            <p class="lead">
+              <a href="/display" class="btn btn-lg btn-default">display</a>
+            </p>
+            <p class="lead">
+              <a href="/login" class="btn btn-lg btn-default">login</a>
+            </p>
+            {% else %}
+            <p class="lead">
+              welcome {{f_name}} <br/>
+              <a href="/newCloth" class="btn btn-lg btn-default">Add cloth</a>
+            </p>
+
+            {% endif %}
+
+
+          </div>
+{%endblock%}

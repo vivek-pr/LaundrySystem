@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+
+<h3>these are your clothes</h3>
+<table>
+<tr>
+  <th>Type</th>
+  <th>Catagory</th>
+  <th>Color</th>
+  <th>Brand</th>
+  <th>Material</th>
+  <th>Status</th>
+  <th>Cost</th>
+</tr>
+{% for val in {{data}} %}
+<tr>
+  <td>val.cloth_type</td>
+  <td>val.catagory</td>
+  <td>val.color</td>
+  <td>val.brand</td>
+  <td>val.material</td>
+  <td>val.status</td>
+  <td>val.cost</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
+
+
+
+
+{% endblock %}
